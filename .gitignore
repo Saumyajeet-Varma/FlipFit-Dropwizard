@@ -1,0 +1,34 @@
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- Maven ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# --- Dropwizard & Runtime ---
+# Logs
+logs/
+*.log
+
+# Configuration (Ignore actual configs, keep templates)
+# Assuming your local config is named 'config.yml' or 'local.yml'
+config.yml
+local.yml
+secrets.yml
+
+# Temporary/Local Databases (e.g., H2)
+*.db
+*.h2.db
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
