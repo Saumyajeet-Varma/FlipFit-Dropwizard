@@ -11,7 +11,7 @@ public class Booking {
     private int bookingId;
 
     @NotNull
-    private int userId;
+    private int customerId;
 
     @NotNull
     private int slotId;
@@ -27,9 +27,9 @@ public class Booking {
 
     public Booking() {}
 
-    public Booking(int bookingId, int userId, int slotId, int centerId, LocalDate bookingDate, BookingStatus status) {
+    public Booking(int bookingId, int customerId, int slotId, int centerId, LocalDate bookingDate, BookingStatus status) {
         this.bookingId = bookingId;
-        this.userId = userId;
+        this.customerId = customerId;
         this.slotId = slotId;
         this.centerId = centerId;
         this.bookingDate = bookingDate;
@@ -44,12 +44,12 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public int getSlotId() {
