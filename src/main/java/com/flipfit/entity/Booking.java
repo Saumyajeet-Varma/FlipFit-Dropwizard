@@ -1,11 +1,26 @@
 package com.flipfit.entity;
 
+import java.time.LocalDate;
+
 public class Booking {
 
     private int bookingId;
     private int userId;
     private int slotId;
+    private int centerId;
+    private LocalDate bookingDate;
     private BookingStatus status;
+
+    public Booking() {}
+
+    public Booking(int bookingId, int userId, int slotId, int centerId, LocalDate bookingDate, BookingStatus status) {
+        this.bookingId = bookingId;
+        this.userId = userId;
+        this.slotId = slotId;
+        this.centerId = centerId;
+        this.bookingDate = bookingDate;
+        this.status = status;
+    }
 
     public int getBookingId() {
         return bookingId;
@@ -29,6 +44,22 @@ public class Booking {
 
     public void setSlotId(int slotId) {
         this.slotId = slotId;
+    }
+
+    public int getCenterId() {
+        return centerId;
+    }
+
+    public void setCenterId(int centerId) {
+        this.centerId = centerId;
+    }
+
+    public LocalDate getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(LocalDate bookingDate) {
+        this.bookingDate = bookingDate;
     }
 
     public BookingStatus getStatus() {
