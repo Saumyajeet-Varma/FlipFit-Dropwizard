@@ -1,15 +1,29 @@
 package com.flipfit.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class Booking {
 
+    @NotNull
     private int bookingId;
+
+    @NotNull
     private int userId;
+
+    @NotNull
     private int slotId;
+
+    @NotNull
     private int centerId;
-    private LocalDate bookingDate;
+
+    @NotNull
     private BookingStatus status;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate bookingDate;
 
     public Booking() {}
 

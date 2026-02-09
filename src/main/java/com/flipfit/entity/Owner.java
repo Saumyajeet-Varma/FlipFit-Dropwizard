@@ -1,10 +1,13 @@
 package com.flipfit.entity;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Owner extends User {
 
+    @NotNull
     private boolean isVerified;
+
     private List<GymCenter> gymCenters;
 
     public Owner() {}

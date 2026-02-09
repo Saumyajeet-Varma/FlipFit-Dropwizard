@@ -1,16 +1,33 @@
 package com.flipfit.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Slot {
 
+    @NotNull
     private int slotId;
+
+    @NotNull
     private int centerId;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate date;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     private LocalTime startTime;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     private LocalTime endTime;
+
+    @Min(0)
     private int totalSeats;
+
+    @Min(0)
     private int availableSeats;
 
     public Slot() {}

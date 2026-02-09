@@ -1,15 +1,27 @@
 package com.flipfit.entity;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class GymCenter {
 
+    @NotNull
     private int centerId;
+
+    @NotEmpty
     private String name;
+
+    @NotEmpty
     private String location;
-    private List<Slot> slots;
+
+    @NotNull
     private boolean approved;
+
+    @NotNull
     private int ownerId;
+
+    private List<Slot> slots;
 
     public GymCenter() {}
 

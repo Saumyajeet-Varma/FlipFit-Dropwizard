@@ -1,11 +1,26 @@
 package com.flipfit.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class User {
 
+    @NotNull
     private int userId;
+
+    @NotEmpty
     private String name;
+
+    @Email
     private String email;
+
+    @JsonIgnore
     private String password;
+
+    @NotNull
     private UserRole role;
 
     public int getUserId() {
