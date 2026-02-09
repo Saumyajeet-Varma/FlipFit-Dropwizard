@@ -16,7 +16,7 @@ public class GymCenter {
     private String location;
 
     @NotNull
-    private boolean approved;
+    private GymCenterStatus status;
 
     @NotNull
     private int ownerId;
@@ -25,11 +25,11 @@ public class GymCenter {
 
     public GymCenter() {}
 
-    public GymCenter(int centerId, String name, String location, boolean approved, int ownerId) {
+    public GymCenter(int centerId, String name, String location, GymCenterStatus status, int ownerId) {
         this.centerId = centerId;
         this.name = name;
         this.location = location;
-        this.approved = approved;
+        this.status = status;
         this.ownerId = ownerId;
     }
 
@@ -65,13 +65,9 @@ public class GymCenter {
         this.slots = slots;
     }
 
-    public boolean isApproved() {
-        return approved;
-    }
+    public GymCenterStatus getStatus() { return status; }
 
-    public void setApproved(boolean approved) {
-        this.approved = approved;
-    }
+    public void setStatus(GymCenterStatus status) { this.status = status; }
 
     public int getOwnerId() {
         return ownerId;

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BookingDAO {
 
-    Booking addBooking();
+    Booking addBooking(Booking booking);
 
     boolean confirmBooking(int bookingId);
 
