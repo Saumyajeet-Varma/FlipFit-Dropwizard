@@ -46,8 +46,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void getReport() {
-        String report = adminDAO.getReport();
-        System.out.println(report);
+    public String getReport() {
+        return adminDAO.getReport();
     }
 }

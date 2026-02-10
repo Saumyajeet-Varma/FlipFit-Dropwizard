@@ -17,5 +17,5 @@ public interface AdminService {
 
     List<User> getAllUsers();
 
-    void getReport();
+    String getReport();
 }
