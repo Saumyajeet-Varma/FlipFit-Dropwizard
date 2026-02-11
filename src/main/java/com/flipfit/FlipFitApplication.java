@@ -1,6 +1,8 @@
 package com.flipfit;
 
 import com.flipfit.dao.*;
+import com.flipfit.health.DatabaseHealthCheck;
+import com.flipfit.health.ServerHealthCheck;
 import com.flipfit.resources.AdminResource;
 import com.flipfit.resources.CustomerResource;
 import com.flipfit.resources.OwnerResource;
@@ -32,6 +34,12 @@ public class FlipFitApplication extends Application<FlipFitConfiguration> {
 
         final JdbiFactory factory = new JdbiFactory();
         final Jdbi jdbi = factory.build(environment, configuration.getDataSourceFactory(), "mysql");
+
+        DatabaseHealthCheck databaseHealthCheck = new DatabaseHealthCheck(jdbi);
+        ServerHealthCheck serverHealthCheck = new ServerHealthCheck();
+
+        environment.healthChecks().register("database", databaseHealthCheck);
+        environment.healthChecks().register("server", serverHealthCheck);
 
         AdminDAO adminDAO = new AdminDAOImpl(jdbi);
         BookingDAO bookingDAO = new BookingDAOImpl(jdbi);
