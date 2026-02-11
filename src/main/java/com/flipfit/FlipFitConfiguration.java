@@ -11,10 +11,54 @@ public class FlipFitConfiguration extends Configuration {
 
     @Valid
     @NotNull
-    @JsonProperty("database")
+    private AppConfig app;
+
+    @Valid
+    @NotNull
     private DataSourceFactory database = new DataSourceFactory();
 
+    @JsonProperty("app")
+    public AppConfig getApp() {
+        return app;
+    }
+
+    @JsonProperty("app")
+    public void setApp(AppConfig app) {
+        this.app = app;
+    }
+
+    @JsonProperty("database")
     public DataSourceFactory getDataSourceFactory() {
         return this.database;
+    }
+
+    @JsonProperty("database")
+    public void setDataSourceFactory(DataSourceFactory database) {
+        this.database = database;
+    }
+
+    public static class AppConfig {
+
+        @NotEmpty
+        private String name;
+
+        @NotEmpty
+        private String version;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getVersion() {
+            return version;
+        }
+
+        public void setVersion(String version) {
+            this.version = version;
+        }
     }
 }
